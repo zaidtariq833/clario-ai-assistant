@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <>
-      <div className="bg-[url('/images/main-bg.png')] bg-cover">
+      <div className="bg-[url('/images/main-bg.png')] pt-[49px] bg-cover">
         <Header />
         <Banner />
       </div>
