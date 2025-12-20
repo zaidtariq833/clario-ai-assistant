@@ -3,7 +3,7 @@ import { questionTags } from "../constants";
 
 export default function QuestionBox() {
   return (
-    <div className="border-2 rounded-2xl px-4 py-4 mx-4 max-w-212.5 max-h-52.75">
+    <div className="border-2 rounded-2xl px-4 py-4">
       <div className="flex items-center gap-1">
         <span className="text-base">Question</span>
         <Image

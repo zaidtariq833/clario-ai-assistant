@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Banner from "@/components/ui/Banner";
 import LiveDemoSection from "@/components/ui/LiveDemoSection";
+import Steps from "@/components/ui/Steps";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <Header />
         <Banner />
         <LiveDemoSection />
+        <Steps />
       </div>
     </>
   );
