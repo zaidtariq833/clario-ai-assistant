@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <div className="mt-22.25">
+    <section className="mt-22.25">
       <p className="text-center bg-white rounded-[50px] w-fit mx-auto px-7 py-0.75 text-base mb-1.5">
         Announcing our latest product launch
       </p>
@@ -22,6 +22,6 @@ export default function Banner() {
           alt="down arrow"
         />
       </div>
-    </div>
+    </section>
   );
 }

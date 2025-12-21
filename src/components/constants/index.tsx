@@ -31,3 +31,21 @@ export const steps = [
     btnText: "Faster Progress!",
   },
 ];
+export const ieltsPracPoints = [
+  "Practice Academic or General Training Tests",
+  "See Band estimates for all 4 criteria",
+  "Get sentence-level corrections in seconds",
+];
+export const ieltsScoreAndMistakes = [
+  {
+    mainText: "Paste your old essays. Get smarter feedback.",
+    paraText:
+      "Bring essays from teachers, books, or other platforms and see why they scored the way they did.",
+    image: "/assets/images/old-essays.png",
+  },
+  {
+    mainText: "Understand your mistakes at a deeper level.",
+    paraText: "See trends across essays so you fix habits, not just sentences.",
+    image: "/assets/images/smartphones.png",
+  },
+];

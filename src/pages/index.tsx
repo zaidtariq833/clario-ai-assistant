@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Banner from "@/components/ui/Banner";
+import IeltsFeatures from "@/components/ui/IeltsFeatures";
 import LiveDemoSection from "@/components/ui/LiveDemoSection";
 import Steps from "@/components/ui/Steps";
 
@@ -11,6 +12,9 @@ export default function Home() {
         <Banner />
         <LiveDemoSection />
         <Steps />
+      </div>
+      <div className="bg-[#fbfcff]">
+        <IeltsFeatures />
       </div>
     </>
   );
