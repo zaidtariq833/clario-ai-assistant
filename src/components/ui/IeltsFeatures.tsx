@@ -2,7 +2,7 @@ import PracticeIelts from "./PracticeIelts";
 
 export default function IeltsFeatures() {
   return (
-    <section className="pt-18">
+    <section className="py-18">
       <span className="block mx-auto w-fit bg-white text-[1rem] px-4 rounded-[50px] py-2">
         Key Features
       </span>

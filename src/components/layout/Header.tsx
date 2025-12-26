@@ -4,7 +4,12 @@ export default function Header() {
   return (
     <div className="mx-auto flex items-center bg-white justify-between max-w-7xl max-h-16 px-2 py-2 rounded-[14px] shadow-[0px_15px_14px_0px_rgba(20,33,131,0.03)]">
       <div>
-        <Image src="/assets/images/logo.png" width={117} height={36} alt="logo" />
+        <Image
+          src="/assets/images/logo.png"
+          width={117}
+          height={36}
+          alt="logo"
+        />
       </div>
 
       <div className="flex gap-2">

@@ -2,7 +2,7 @@ import StepsPoint from "./StepsPoint";
 
 export default function Steps() {
   return (
-    <section className="">
+    <section className="pt-[72px]">
       <span className="block mx-auto w-fit bg-white text-[1rem] px-4 rounded-[50px] py-2">
         How It Work
       </span>

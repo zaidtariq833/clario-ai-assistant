@@ -10,29 +10,28 @@ export default function PracticeIelts() {
           container
           className="shadow-[0_4px_8px_3px_rgba(0,0,0,0.08)] rounded-4xl"
         >
-          <Grid
-            sm={5}
-            className="flex flex-col justify-between bg-white rounded-l-4xl py-8 px-6"
-          >
-            <div>
-              <h5 className="text-[26px] text-[#000000] font-bold">
-                Practice IELTS tasks the smart way.
-              </h5>
-              <p className="text-[#535457] max-w-114 mt-5.25 text-[24px]">
-                Real questions, instant scoring, and structured practice
-                pathways.
-              </p>
-            </div>
-            <div className="flex flex-col">
-              {ieltsPracPoints?.map((point, index) => {
-                return (
-                  <>
-                    <p className="text-[20px] py-5 border-b border-[#bfbfbf]">
-                      {point}
-                    </p>
-                  </>
-                );
-              })}
+          <Grid sm={5} className=" bg-white rounded-l-4xl py-8 px-6">
+            <div className="flex flex-col justify-between h-full">
+              <div>
+                <h5 className="text-[26px] text-[#000000] font-bold">
+                  Practice IELTS tasks the smart way.
+                </h5>
+                <p className="text-[#535457] max-w-114 mt-5.25 text-[24px]">
+                  Real questions, instant scoring, and structured practice
+                  pathways.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                {ieltsPracPoints?.map((point, index) => {
+                  return (
+                    <>
+                      <p className="text-[20px] py-5 border-b border-[#bfbfbf]">
+                        {point}
+                      </p>
+                    </>
+                  );
+                })}
+              </div>
             </div>
           </Grid>
 
@@ -64,6 +63,7 @@ export default function PracticeIelts() {
                 width={864}
                 height={583}
                 alt="smartphones"
+                className="rounded-b-4xl"
               />
             </Grid>
           ))}
