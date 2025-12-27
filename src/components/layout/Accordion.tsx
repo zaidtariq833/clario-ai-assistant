@@ -1,45 +1,52 @@
 "use client";
-
 import { FAQ } from "@/types";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-} from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import CloseIcon from "@mui/icons-material/Close";
-import { useState } from "react";
+import { FiPlus } from "react-icons/fi";
+import { IoClose } from "react-icons/io5";
+import { geistMedium } from "@/styles/fonts";
 
 type Props = {
   faq: FAQ;
+  isOpen: boolean;
+  onToggle: () => void;
 };
 
-export default function Accordions({ faq }: Props) {
-  const [expanded, setExpanded] = useState(false);
-  console.log(expanded, "expanded");
+export default function Accordions({ faq, isOpen, onToggle }: Props) {
   return (
-    <Accordion
-      onChange={() => setExpanded(!expanded)}
-      expanded={expanded}
-      className="!bg-[#f5f6fc]"
-      elevation={0}
-    >
-      <AccordionSummary
-        expandIcon={expanded ? <CloseIcon /> : <AddIcon />}
-        aria-controls="panel1-content"
-        id="panel1-header"
+    <div className="bg-(--ghost-white) rounded-xl overflow-hidden transition-all duration-300">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between py-5 px-6 text-left focus:outline-none"
       >
-        <Typography variant="body1" className="text-[16px]">
+        <span
+          className={`${geistMedium.className} text-[18px] leading-tight text-(--black)`}
+        >
           {faq.question}
-        </Typography>
-      </AccordionSummary>
+        </span>
 
-      <AccordionDetails>
-        <Typography variant="body1" className="text-[#4e4e4e] mt-4">
-          {faq.answer}
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
+        <div
+          className={`transition-transform duration-300 ${
+            isOpen ? "rotate-90" : "rotate-0"
+          }`}
+        >
+          {isOpen ? (
+            <IoClose className="w-6 h-6" />
+          ) : (
+            <FiPlus className="w-6 h-6" />
+          )}
+        </div>
+      </button>
+
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="px-6 pb-6 text-(--dim-gray) text-[16px] leading-6 pt-4">
+            {faq.answer}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

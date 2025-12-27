@@ -1,74 +1,89 @@
-import { Grid } from "@mui/material";
 import Image from "next/image";
 import { ieltsPracPoints, ieltsScoreAndMistakes } from "../constants";
+import { geistMedium, geistRegular, geistSemiBold } from "@/styles/fonts";
 
 export default function PracticeIelts() {
   return (
     <>
-      <div className="max-w-7xl mx-auto mt-14">
-        <Grid
-          container
-          className="shadow-[0_4px_8px_3px_rgba(0,0,0,0.08)] rounded-4xl"
-        >
-          <Grid sm={5} className=" bg-white rounded-l-4xl py-8 px-6">
+      <section className="max-w-7xl mx-auto mt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-12 shadow-card rounded-4xl overflow-hidden">
+          <div className="sm:col-span-5 bg-(--white) py-8 px-6">
             <div className="flex flex-col justify-between h-full">
               <div>
-                <h5 className="text-[26px] text-[#000000] font-bold">
+                <h5
+                  className={`${geistSemiBold.className} leading-8.5 text-[26px] text-(--black)`}
+                >
                   Practice IELTS tasks the smart way.
                 </h5>
-                <p className="text-[#535457] max-w-114 mt-5.25 text-[24px]">
+                <p
+                  className={`${geistRegular.className} leading-7.75 text-(--carbon-gray) max-w-114 mt-5.25 text-[24px]`}
+                >
                   Real questions, instant scoring, and structured practice
                   pathways.
                 </p>
               </div>
-              <div className="flex flex-col">
-                {ieltsPracPoints?.map((point, index) => {
-                  return (
-                    <>
-                      <p className="text-[20px] py-5 border-b border-[#bfbfbf]">
-                        {point}
-                      </p>
-                    </>
-                  );
-                })}
+
+              <div className="flex flex-col mt-8 sm:mt-0">
+                {ieltsPracPoints?.map((point, index) => (
+                  <p
+                    key={index}
+                    className={`${
+                      geistMedium.className
+                    } leading-6.5 text-(--black) text-[20px] pt-5 ${
+                      index === 2 ? "pb-0" : "pb-5"
+                    }
+                    } border-b border-[#bfbfbf] last:border-b-0`}
+                  >
+                    {point}
+                  </p>
+                ))}
               </div>
             </div>
-          </Grid>
+          </div>
 
-          <Grid sm={7} className="bg-[#8163f7] rounded-r-4xl overflow-hidden">
+          <div className="sm:col-span-7 bg-(--soft-violet) overflow-hidden flex items-end">
             <Image
-              src={"/assets/images/practice-ielts.png"}
+              src="/assets/images/practice-ielts.png"
               width={1170}
               height={780}
               alt="practice ielts"
-              className="pl-8 pt-8 object-cover"
+              className="pl-8 pt-8 object-cover w-full h-full"
             />
-          </Grid>
-        </Grid>
-        <Grid container className="mt-6 justify-between">
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row mt-6 gap-6 justify-between">
           {ieltsScoreAndMistakes?.map((prac, index) => (
-            <Grid
-              item
-              sm={5.9}
+            <div
               key={index}
-              className="bg-white rounded-4xl shadow-[0_4px_8px_3px_rgba(0,0,0,0.08)]"
+              className="flex-1 bg-(--white) rounded-4xl shadow-card overflow-hidden flex flex-col"
             >
               <div className="py-8 px-6">
-                <h5 className="font-bold text-[26px] mb-2">{prac?.mainText}</h5>
-                <p className="text-gray-600 text-[24px]">{prac?.paraText}</p>
+                <h5
+                  className={`${geistSemiBold.className} text-[26px] leading-8.5 mb-2`}
+                >
+                  {prac?.mainText}
+                </h5>
+                <p
+                  className={`${geistRegular.className} text-(--carbon-gray) text-[24px] mt-5.25 leading-7.75`}
+                >
+                  {prac?.paraText}
+                </p>
               </div>
 
-              <Image
-                src={prac?.image}
-                width={864}
-                height={583}
-                alt="smartphones"
-                className="rounded-b-4xl"
-              />
-            </Grid>
+              <div className="mt-auto">
+                <Image
+                  src={prac?.image}
+                  width={864}
+                  height={583}
+                  alt="smartphones"
+                  className="w-full h-auto rounded-b-4xl object-cover"
+                />
+              </div>
+            </div>
           ))}
-        </Grid>
-      </div>
+        </div>
+      </section>
     </>
   );
 }

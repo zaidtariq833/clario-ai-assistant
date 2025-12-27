@@ -1,29 +1,33 @@
-import { Box, Typography } from "@mui/material";
+"use client";
 import { faqs } from "../constants";
 import { FAQ } from "@/types";
 import Accordions from "../layout/Accordion";
+import { geistSemiBold } from "@/styles/fonts";
+import { useState } from "react";
 
 export default function FAQs() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
   return (
-    <Box component="section" className="relative bottom-87.5 !h-[120px] pb-18">
-      <Typography
-        variant="h2"
-        className="text-[56px] text-center bg-[linear-gradient(90deg,#000000_0%,rgba(102,102,102,0.59)_100%)] bg-clip-text text-transparent"
-      >
-        FAQs
-      </Typography>
-      <Box
-        component="div"
-        className="flex flex-col gap-3 max-w-174 mx-auto mt-10"
-      >
+    <section className="-mt-87.5 pb-18">
+      <h2 className={`${geistSemiBold.className} faq-text`}>FAQs</h2>
+      <div className="flex flex-col gap-3 max-w-174 mx-auto mt-10">
         {faqs.map((faq: FAQ, index: number) => {
           return (
-            <Box component="div" key={index} className="px-6 rounded-lg">
-              <Accordions faq={faq} />
-            </Box>
+            <div key={index} className="px-6 rounded-lg">
+              <Accordions
+                key={index}
+                faq={faq}
+                isOpen={openIndex === index}
+                onToggle={() => handleToggle(index)}
+              />{" "}
+            </div>
           );
         })}
-      </Box>
-    </Box>
+      </div>
+    </section>
   );
 }

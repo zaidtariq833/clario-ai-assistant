@@ -1,43 +1,54 @@
 import Image from "next/image";
 import { steps } from "../constants";
-import { Grid } from "@mui/material";
+import { geistRegular, interLight } from "@/styles/fonts";
 
 export default function StepsPoint() {
   return (
-    <div className="mx-18 mt-12 mb-18">
-      {/* The Grid container now sits safely inside the margin */}
-      <Grid container spacing={1}>
-        {steps.map((step, index) => (
-          <Grid item xs={12} lg={3} key={index}>
-            <div className="bg-[#f5f6fc] rounded-3xl p-4 flex flex-col h-full">
-              <p className="uppercase text-[#838383] text-sm">{step?.name}</p>
-              <h6 className="text-[1.5rem] mt-3">{step?.mainText}</h6>
+    <div className="mx-18 mt-12 mb-18 grid grid-cols-1 lg:grid-cols-4 gap-2">
+      {steps.map((step, index) => (
+        <div key={index} className="relative">
+          <div className="bg-(--ghost-white) rounded-3xl p-4 flex flex-col h-full min-h-85.25">
+            <p
+              className={`${interLight.className} leading-6 uppercase text-(--gray-stone) text-[20px]`}
+            >
+              {step?.name}
+            </p>
 
-              <div className="grow flex items-center justify-center">
-                <Image
-                  src={step?.image}
-                  width={261}
-                  height={178}
-                  alt="step image"
-                />
-              </div>
+            <h6
+              className={`${geistRegular.className} leading-6 text-[1.5rem] mt-3`}
+            >
+              {step?.mainText}
+            </h6>
 
-              <span className="bg-white text-[14px] block w-fit px-4 py-2 rounded-[4.5rem] mt-4">
-                {step?.btnText}
-              </span>
-            </div>
-            <div className="flex justify-end">
+            <div className="grow flex items-center justify-center py-6">
               <Image
-                src={"/assets/icons/forward-arrow.svg"}
-                width={40}
-                height={40}
-                alt="forwarded arrow"
-                className="flex justify-end relative left-5 bottom-50"
+                src={step?.image}
+                width={261}
+                height={178}
+                alt="step image"
+                className="object-contain"
               />
             </div>
-          </Grid>
-        ))}
-      </Grid>
+
+            <span
+              className={`${geistRegular.className} leading-4.5 bg-(--white) text-[14px] block w-fit px-4 py-2 rounded-[4.5rem] mt-auto`}
+            >
+              {step?.btnText}
+            </span>
+          </div>
+
+          <div className="absolute -right-6 top-1/2 -translate-y-1/2 z-10 hidden lg:block">
+            {index < steps.length - 1 && (
+              <Image
+                src="/assets/icons/forward-arrow.svg"
+                width={40}
+                height={40}
+                alt="forward arrow"
+              />
+            )}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

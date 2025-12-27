@@ -8,10 +8,38 @@
 }
 
 @theme inline {
+  /* fonts */
+  --font-geist-medium: var(--font-geist-medium);
+  --font-geist-regular: var(--font-geist-regular);
+  --font-geist-semibold: var(--font-geist-semibold);
+  --font-inter-regular: var(--font-inter-regular);
+  --font-inter-semibold: var(--font-inter-semibold);
+  --font-inter-medium: var(--font-inter-medium);
+  --font-inter-light: var(--font-inter-light);
+  --font-fangsong: "Fangsong", serif;
+  /* colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* helpers */
+  --shadow-light: 0px 15px 14px 0px rgba(20, 33, 131, 0.03);
+  --shadow-lightest: 0 1px 1px 1px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 4px 8px 3px rgba(0, 0, 0, 0.08);
+  --shadow-dark: 0 23.1px 51.71px 0 rgba(0, 0, 0, 0.1),
+    0 93.52px 93.52px 0 rgba(0, 0, 0, 0.09),
+    0 211.24px 126.53px 0 rgba(0, 0, 0, 0.05),
+    0 376.28px 150.73px 0 rgba(0, 0, 0, 0.01),
+    0 587.52px 163.93px 0 rgba(0, 0, 0, 0);
+  --background-image-brand-sky: linear-gradient(
+    to bottom,
+    #2076fa 0%,
+    #5599ff 70%,
+    #b5d2fd 100%;
+  );
+  --background-image-text-fade: linear-gradient(
+    to right,
+    #000000 0%,
+    rgba(102, 102, 102, 0.59) 100%
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,30 +52,90 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+@layer base {
+  :root {
+    --white: #ffffff;
+    --black: #000000;
+    --dark-gray: #4d4d4d;
+    --raisin-black: #1e1e1e;
+    --white-smoke: #f9f9f9;
+    --aviation-navy: #181d27;
+    --alabaster: #fafafa;
+    --dark-gunmetal: #15171d;
+    --alice-blue: #e5edfe;
+    --light-periwinkle: #cfeafd;
+    --oxford-blue: #101828;
+    --roman-silver: #667085;
+    --royal-blue: #2563eb;
+    --tropical-blue: #b9c3ff;
+    --ghost-white: #f5f6fc;
+    --bright-royal-blue: #2076fa;
+    --carbon-gray: #535457;
+    --gray-stone: #838383;
+    --medium-gray: #666666;
+    --silver: #bfbfbf;
+    --soft-violet: #8163f7;
+    --cloud-grey: #eaecf0;
+    --warm-gray: #867e7e;
+    --ice-flow: #fbfcff;
+    --neutral-gray: #636363;
+  }
+}
+
+@layer components {
+  .header {
+    @apply mx-auto flex items-center bg-(--white) justify-between max-w-7xl max-h-16 px-2 py-2 rounded-[14px] shadow-light;
+  }
+
+  .editor-section {
+    @apply max-w-295.75 mx-auto mt-12 mb-16.75 border-[6px] rounded-[17px] border-(--alice-blue) shadow-dark;
+  }
+  .btn-signin {
+    @apply text-(--aviation-navy) bg-linear-to-b from-(--white-smoke) to-(--white) px-[18.27px] py-[9.13px] whitespace-nowrap rounded-[13.7px] cursor-pointer transition;
+  }
+
+  .btn-startfree {
+    @apply px-7.5 py-2.5 bg-(--dark-gunmetal) text-(--white) rounded-xl hover:bg-(--alabaster) hover:text-(--black) cursor-pointer transition;
+  }
+
+  .btn-submitessay {
+    @apply w-full bg-[linear-gradient(to_bottom,#2076FA_0%,#5599FF_70%,#B5D2FD_100%)] leading-[26px] text-(--white) text-[20px] py-3.5 px-7.5 rounded-[9px] transition-all duration-300 hover:cursor-pointer;
+  }
+
+  .ielts-band-text {
+    @apply text-[3.5rem] text-center my-4! bg-linear-to-r from-(--black) to-(--medium-gray)/59 bg-clip-text text-transparent leading-18.25;
+  }
+
+  .ielts-designed-text {
+    @apply font-geist-semibold text-[48px] leading-15.5 tracking-normal max-w-142.5 mx-auto text-center my-4 bg-linear-to-r from-[#000000] to-[#666666]/59 bg-clip-text text-transparent;
+  }
+
+  .latest-product-text {
+    @apply text-center bg-(--white) rounded-[50px] w-fit mx-auto px-7 py-0.75 text-base mb-1.5 shadow-sm border border-(--white-smoke);
+  }
+
+  .main-heading {
+    @apply mt-1.5 mb-2.75 text-[86px] leading-24 mx-auto tracking-[-0.05em] text-center max-w-198.25;
+  }
+
+  .span-text {
+    @apply block mx-auto w-fit bg-(--white) text-[1rem] px-4 rounded-[50px] py-2 border border-(--white-smoke) shadow-sm;
+  }
+
+  .proven-track-text {
+    @apply text-[48px] mx-auto text-center my-4 bg-linear-to-r from-[#000000] to-[#666666]/59 bg-clip-text text-transparent relative z-10;
+  }
+
+  .faq-text {
+    @apply text-[56px] text-center bg-[linear-gradient(90deg,#000000_0%,rgba(102,102,102,0.59)_100%)] bg-clip-text text-transparent;
+  }
 }
 
 @layer utilities {
-  .mask-box {
-    background-color: #f4f4f4;
-
-    mask:  radial-gradient(5px at 25% 0   ,#0000 98%,#000) 50% 5px/20px 51% repeat-x,
-    radial-gradient(5px at 75% 50% ,#000 99%,#0000 101%) top/20px 10px repeat-x,
-    radial-gradient(5px at 75% 100%,#0000 98%,#000) calc(50% + 10px) calc(100% - 5px)/20px 51% repeat-x,
-    radial-gradient(5px at 25% 50% ,#000 99%,#0000 101%) calc(50% + 10px) 100%/20px 10px repeat-x,
-    radial-gradient(5px at 0    75%,#0000 98%,#000) 5px 50%/51% 20px repeat-y,
-    radial-gradient(5px at 50%  25%,#000 99%,#0000 101%) left/10px 20px repeat-y,
-    radial-gradient(5px at 100% 25%,#0000 98%,#000) calc(100% - 5px) calc(50% + 10px)/51% 20px repeat-y,
-    radial-gradient(5px at 50%  75%,#000 99%,#0000 101%) 100% calc(50% + 10px)/10px 20px repeat-y;
-
-    /* Safari support */
-    -webkit-mask: radial-gradient(5px at 25% 0   ,#0000 98%,#000) 50% 5px/20px 51% repeat-x,
-    radial-gradient(5px at 75% 50% ,#000 99%,#0000 101%) top/20px 10px repeat-x,
-    radial-gradient(5px at 75% 100%,#0000 98%,#000) calc(50% + 10px) calc(100% - 5px)/20px 51% repeat-x,
-    radial-gradient(5px at 25% 50% ,#000 99%,#0000 101%) calc(50% + 10px) 100%/20px 10px repeat-x,
-    radial-gradient(5px at 0    75%,#0000 98%,#000) 5px 50%/51% 20px repeat-y,
-    radial-gradient(5px at 50%  25%,#000 99%,#0000 101%) left/10px 20px repeat-y,
-    radial-gradient(5px at 100% 25%,#0000 98%,#000) calc(100% - 5px) calc(50% + 10px)/51% 20px repeat-y,
-    radial-gradient(5px at 50%  75%,#000 99%,#0000 101%) 100% calc(50% + 10px)/10px 20px repeat-y;
+  .transition {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

@@ -7,34 +7,74 @@ import IeltsFeatures from "@/components/ui/IeltsFeatures";
 import LiveDemoSection from "@/components/ui/LiveDemoSection";
 import Steps from "@/components/ui/Steps";
 import Testimonials from "@/components/ui/Testimonials";
-import { Box } from "@mui/material";
 
 export default function Home() {
   return (
     <>
-      <Box
-        component="div"
-        className="bg-[url('/assets/images/main-bg.png')] bg-cover bg-center bg-no-repeat pt-12.25"
+      <div
+        className="bg-[url('/assets/images/main-bg.png')] bg-cover bg-[center_-40px] 
+ bg-no-repeat pt-[49px]"
       >
         <Header />
         <Banner />
         <LiveDemoSection />
         <Steps />
-      </Box>
-      <Box component="div" className="bg-[#fbfcff]">
+      </div>
+
+      <div className="bg-(--ice-flow)">
         <IeltsFeatures />
         <Testimonials />
         <FAQs />
-      </Box>
-      <Box
-        component="div"
-        className="bg-[url('/assets/images/footer-image.png')] bg-cover bg-center"
-      >
-        <Box className="pt-[148.5px]">
+      </div>
+
+      <div className="relative overflow-hidden bg-[#FBFCFF]">
+        <div
+          className="
+      absolute
+      -top-68
+      inset-x-0
+      h-[900px]
+      bg-[url('/assets/images/footer-image.png')]
+      bg-center
+      bg-cover
+      bg-no-repeat
+      z-0
+    "
+        />
+
+        <div
+          className="
+      pointer-events-none
+      absolute
+      top-0
+      inset-x-0
+      h-[100px]
+      z-[1]
+      bg-gradient-to-b
+      from-[#FBFCFF]
+      via-[#FBFCFF]/90
+      via-[#FBFCFF]/60
+      to-transparent
+    "
+        />
+
+        <div
+          className="
+      absolute
+      top-0
+      inset-x-0
+      h-[500px]
+      z-[2]
+      bg-[radial-gradient(ellipse_at_top,#FBFCFF_0%,transparent_75%)]
+      opacity-80
+    "
+        />
+
+        <div className="relative z-10">
           <CTASection />
           <Footer />
-        </Box>
-      </Box>
+        </div>
+      </div>
     </>
   );
 }

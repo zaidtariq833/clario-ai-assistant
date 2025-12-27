@@ -1,7 +1,7 @@
-import { Grid } from "@mui/material";
 import { testimonials } from "../constants";
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
+import SubHeading from "../common/SubHeading";
+import { geistBold, geistRegular, geistSemiBold } from "@/styles/fonts";
 
 export default function Testimonials() {
   const col1 = testimonials.slice(0, 5);
@@ -18,10 +18,16 @@ export default function Testimonials() {
     return (
       <div
         key={index}
-        className={`w-103.25 h-110.75 py-12.25 px-7.75 mb-6 ${bgCard} bg-center bg-cover bg-no-repeat`}
+        className={`w-103.25 h-110.75 pt-12.25 px-7.75 mb-[11.38px] ${bgCard} bg-center bg-cover bg-no-repeat`}
       >
-        <h4 className="text-[24px]">{card?.heading}</h4>
-        <p className="text-[20px] text-[#636363] mt-3.5">{card?.description}</p>
+        <h4 className={`${geistBold.className} leading-7.75 text-[24px]`}>
+          {card?.heading}
+        </h4>
+        <p
+          className={`${geistRegular.className} leading-[31.3px] text-[20px] text-(--neutral-gray) mt-3.5`}
+        >
+          {card?.description}
+        </p>
 
         {card?.personImage && (
           <div className="flex items-center gap-3 mt-23.5">
@@ -32,7 +38,11 @@ export default function Testimonials() {
               alt="person"
               className="rounded-full"
             />
-            <span>{card?.learnerName}</span>
+            <span
+              className={`${geistSemiBold.className} text-[20px] leading-[31.3px]`}
+            >
+              {card?.learnerName}
+            </span>
           </div>
         )}
       </div>
@@ -41,24 +51,17 @@ export default function Testimonials() {
 
   return (
     <section className="pt-18">
-      <span className="block mx-auto w-fit bg-white text-[1rem] px-4 rounded-[50px] py-2">
-        Testimonials
-      </span>
-
-      <h2 className="text-[48px] mx-auto text-center my-4 bg-linear-to-r from-[#000000] to-[#666666]/59 bg-clip-text text-transparent relative z-10">
-        Proven track of satisfied users
-      </h2>
-      <Grid container spacing={0}>
-        <Grid sm={12} lg={4} className="place-items-end relative bottom-66">
-          {col1.map(renderCard)}
-        </Grid>
-        <Grid sm={12} lg={4} className="place-items-center">
-          {col2.map(renderCard)}
-        </Grid>
-        <Grid sm={12} lg={4} className="relative bottom-60">
-          {col3.map(renderCard)}
-        </Grid>
-      </Grid>
+      <SubHeading
+        spanText="Testimonials"
+        subHeading="Proven track of satisfied users"
+        subHeadingClass="proven-track-text"
+        fontFamily={geistSemiBold.className}
+      />
+      <div className="flex justify-center gap-2">
+        <div className="relative lg:bottom-66">{col1.map(renderCard)}</div>
+        <div>{col2.map(renderCard)}</div>
+        <div className="relative lg:bottom-60">{col3.map(renderCard)}</div>
+      </div>
     </section>
   );
 }
