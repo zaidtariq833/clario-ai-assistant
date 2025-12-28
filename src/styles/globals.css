@@ -7,6 +7,33 @@
   --foreground: #171717;
 }
 
+.loader::before {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  border: 15px solid #514b82;
+  animation: loader-spin 2s linear infinite;
+}
+
+@keyframes loader-spin {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
+
 @theme inline {
   /* fonts */
   --font-geist-medium: var(--font-geist-medium);
@@ -82,19 +109,29 @@ body {
     --warm-gray: #867e7e;
     --ice-flow: #fbfcff;
     --neutral-gray: #636363;
+    --forest-green: #45bf6a;
+    --flaming-red: #e25822;
+    --dim-yellow: #eedc5b;
+    --lightest-green: #d1fae5;
+    --lightest-yellow: #fff9b0;
+    --lightest-red: #e88357;
+    --violet: #7f56d9;
+    --bad-score: #fcf6e1;
+    --good-score: #e9f6e8;
   }
 }
 
 @layer components {
   .header {
-    @apply mx-auto flex items-center bg-(--white) justify-between max-w-7xl max-h-16 px-2 py-2 rounded-[14px] shadow-light;
+    @apply max-w-[396px] mx-4 flex items-center bg-(--white) justify-between max-h-16 px-2 py-2 rounded-[14px] shadow-light md:mx-auto md:max-w-7xl;
   }
 
   .editor-section {
     @apply max-w-295.75 mx-auto mt-12 mb-16.75 border-[6px] rounded-[17px] border-(--alice-blue) shadow-dark;
   }
+
   .btn-signin {
-    @apply text-(--aviation-navy) bg-linear-to-b from-(--white-smoke) to-(--white) px-[18.27px] py-[9.13px] whitespace-nowrap rounded-[13.7px] cursor-pointer transition;
+    @apply hidden text-(--aviation-navy) bg-linear-to-b from-(--white-smoke) to-(--white) px-[18.27px] py-[9.13px] whitespace-nowrap rounded-[13.7px] cursor-pointer transition md:block;
   }
 
   .btn-startfree {
@@ -114,11 +151,11 @@ body {
   }
 
   .latest-product-text {
-    @apply text-center bg-(--white) rounded-[50px] w-fit mx-auto px-7 py-0.75 text-base mb-1.5 shadow-sm border border-(--white-smoke);
+    @apply text-center leading-4 bg-(--white) rounded-[50px] w-fit mx-auto px-3.5 py-[1.76px] text-[12px] mb-[12px] md:mb-1.5 md:shadow-sm md:border md:border-(--white-smoke) md:text-base md:px-7 md:py-0.75;
   }
 
   .main-heading {
-    @apply mt-1.5 mb-2.75 text-[86px] leading-24 mx-auto tracking-[-0.05em] text-center max-w-198.25;
+    @apply mt-1.5 mb-[5.51px] md:mb-2.75 max-w-[326px] text-[48px] md:text-[86px] leading-[52.1px] md:leading-24 mx-auto tracking-[-0.05em] text-center md:max-w-198.25;
   }
 
   .span-text {

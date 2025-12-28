@@ -1,8 +1,21 @@
+"use client";
 import Image from "next/image";
 import TaskRequirements from "./TaskRequirements";
 import { geistMedium, geistRegular } from "@/styles/fonts";
+import { useSelector } from "react-redux";
+import Modal from "react-responsive-modal";
+import { useState } from "react";
 
 export default function Instructions() {
+  const { words } = useSelector(
+    (state: any) => state.ieltsCalculate.ieltsScoreCalculate
+  );
+  const isEssayCompleted = useSelector(
+    (state: any) => state.ieltsCalculate.isEssayCompleted
+  );
+
+  console.log(isEssayCompleted, "essay completion");
+  console.log(words, "wordss");
   return (
     <>
       <div className="max-w-76.25 max-h-65.25 border-2 border-(--black) rounded-2xl px-4 py-4">
@@ -51,7 +64,7 @@ export default function Instructions() {
             <p
               className={`${geistRegular.className} text-(--black) text-[14px] leading-4.5`}
             >
-              0/250
+              {isEssayCompleted ? words : 0}/250
             </p>
           </div>
         </div>

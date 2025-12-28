@@ -11,10 +11,7 @@ import Testimonials from "@/components/ui/Testimonials";
 export default function Home() {
   return (
     <>
-      <div
-        className="bg-[url('/assets/images/main-bg.png')] bg-cover bg-[center_-40px] 
- bg-no-repeat pt-[49px]"
-      >
+      <div className="bg-[url('/assets/images/main-bg.png')] bg-cover bg-position-[center_-40px] bg-no-repeat pt-4 md:pt-12.25">
         <Header />
         <Banner />
         <LiveDemoSection />
@@ -27,21 +24,8 @@ export default function Home() {
         <FAQs />
       </div>
 
-      <div className="relative overflow-hidden bg-[#FBFCFF]">
-        <div
-          className="
-      absolute
-      -top-68
-      inset-x-0
-      h-[900px]
-      bg-[url('/assets/images/footer-image.png')]
-      bg-center
-      bg-cover
-      bg-no-repeat
-      z-0
-    "
-        />
-
+      <div className="relative overflow-hidden bg-(--ice-flow)">
+        <div className="absolute -top-68 inset-x-0 h-225 bg-[url('/assets/images/footer-image.png')] bg-center bg-cover bg-no-repeat z-0" />
         <div
           className="
       pointer-events-none
@@ -51,9 +35,9 @@ export default function Home() {
       h-[100px]
       z-[1]
       bg-gradient-to-b
-      from-[#FBFCFF]
-      via-[#FBFCFF]/90
-      via-[#FBFCFF]/60
+      from-(--ice-flow)
+      via-(--ice-flow)/90
+      via-(--ice-flow)/60
       to-transparent
     "
         />

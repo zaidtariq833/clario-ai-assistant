@@ -188,3 +188,22 @@ export const faqs = [
   },
 ];
 export const footerPages = ["Privacy Policy", "Terms & Conditions"];
+
+export const connectors = [
+  "however",
+  "therefore",
+  "moreover",
+  "for example",
+  "for instance",
+  "on the other hand",
+  "as a result",
+  "consequently",
+  "in contrast",
+];
+
+export const writingTypes = [
+  "Task Response",
+  "Coherence & Cohesion",
+  "Lexical Resource",
+  "Grammar Range & Accuracy",
+];

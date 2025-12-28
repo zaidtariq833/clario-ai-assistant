@@ -7,13 +7,17 @@ import {
   interRegular,
   interSemiBold,
 } from "@/styles/fonts";
-import "@/styles/globals.css";
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
 import type { AppProps } from "next/app";
+import "@/styles/globals.css";
+import "react-responsive-modal/styles.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div
-      className={`
+    <Provider store={store}>
+      <div
+        className={`
       ${geistMedium.variable} 
       ${geistRegular.variable} 
       ${geistSemiBold.variable} 
@@ -22,8 +26,9 @@ export default function App({ Component, pageProps }: AppProps) {
       ${interMedium.variable} 
       ${interLight.variable}
     `}
-    >
-      <Component {...pageProps} />
-    </div>
+      >
+        <Component {...pageProps} />
+      </div>
+    </Provider>
   );
 }

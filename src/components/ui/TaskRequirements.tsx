@@ -1,8 +1,16 @@
+"use client";
 import Image from "next/image";
 import { taskReq } from "../constants";
 import { geistRegular } from "@/styles/fonts";
+import { useSelector } from "react-redux";
 
 export default function TaskRequirements() {
+  const { paragraphs } = useSelector(
+    (state: any) => state.ieltsCalculate.ieltsScoreCalculate
+  );
+  const isEssayCompleted = useSelector(
+    (state: any) => state.ieltsCalculate.ieltsScoreCalculate
+  );
   return (
     <>
       <div className="flex flex-col justify-between">

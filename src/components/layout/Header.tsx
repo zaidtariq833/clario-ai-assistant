@@ -1,3 +1,4 @@
+import { geistMedium } from "@/styles/fonts";
 import Image from "next/image";
 
 export default function Header() {
@@ -13,8 +14,14 @@ export default function Header() {
       </div>
 
       <div className="flex gap-2">
-        <button className="font-geist-medium btn-signin">Sign in</button>
-        <button className="font-geist-medium btn-startfree">Start For Free</button>
+        <button className={`${geistMedium.className} btn-signin`}>
+          Sign in
+        </button>
+        <button
+          className={`${geistMedium.className} text-[14px] btn-startfree`}
+        >
+          Start For Free
+        </button>
       </div>
     </header>
   );

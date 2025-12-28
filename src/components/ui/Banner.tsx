@@ -3,18 +3,18 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <section className="mt-22.25">
+    <section className="mt-4 pt-[143.98px] md:mt-22.25">
       <p className={`${geistRegular.className} latest-product-text`}>
         Announcing our latest product launch
       </p>
       <h1 className={`${geistRegular.className} main-heading`}>
         Your AI IELTS Writing Coach —&nbsp;
-        <span className="text-(--black) italic text-[86px] font-fangsong tracking-[-8px]">
+        <span className="text-(--black) italic text-[48px] md:text-[86px] font-fangsong tracking-[-4px] md:tracking-[-8px]">
           Instant Scores
         </span>
       </h1>
       <p
-        className={`${interRegular.className} text-(--dark-gray) text-[1rem] text-center max-w-128.75 mx-auto leading-6.5 mb-10 tracking-normal`}
+        className={`${interRegular.className} text-(--dark-gray) text-[14px] md:text-[1rem] text-center max-w-86 md:max-w-128.75 mx-auto leading-6.5 mb-10 tracking-normal`}
       >
         Instant scoring, corrections, and personalized guidance — practice
         smarter and boost your band.
