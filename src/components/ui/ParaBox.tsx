@@ -48,7 +48,7 @@ export default function ParaBox() {
             className="mt-1"
           />
           <textarea
-            className={`${geistRegular.className} leading-6.75 w-full resize-none h-112.5 overflow-y-auto bg-transparent focus:outline-none text-base`}
+            className={`${geistRegular.className} textarea`}
             placeholder="Start typing your essay here - try it now!"
             value={essay}
             onChange={(e) => setEssay(e.target.value)}

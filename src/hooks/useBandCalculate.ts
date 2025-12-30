@@ -3,7 +3,6 @@ import { connectors } from "@/components/constants";
 import { useMemo } from "react";
 
 export default function useBandCalculate(essay: string) {
-  let requirementsFulfilled = [];
   const text = essay.trim();
   const words = useMemo(() => text.match(/\b[\w']+\b/g) || [], [text]);
   const sentences = useMemo(() => text.split(/[.!?]+/).filter(Boolean), [text]);

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { questionTags } from "../constants";
+import { questionTags } from "@/components/constants";
 import {
   geistRegular,
   interMedium,
@@ -35,7 +35,7 @@ export default function QuestionBox() {
         </p>
       </div>
       <div className="flex items-center gap-2">
-        {questionTags?.map((ques, index) => {
+        {questionTags?.map((ques: string, index: number) => {
           return (
             <p
               key={index}

@@ -1,24 +1,18 @@
 "use client";
-import { FAQ } from "@/types";
 import { FiPlus } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { geistMedium } from "@/styles/fonts";
+import { AccordionProps } from "@/types";
 
-type Props = {
-  faq: FAQ;
-  isOpen: boolean;
-  onToggle: () => void;
-};
-
-export default function Accordions({ faq, isOpen, onToggle }: Props) {
+export default function Accordions({ faq, isOpen, onToggle }: AccordionProps) {
   return (
     <div className="bg-(--ghost-white) rounded-xl overflow-hidden transition-all duration-300">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between py-5 px-6 text-left focus:outline-none"
+        className="w-full flex items-center justify-between py-3 px-6 md:py-5 md:px-6 text-left focus:outline-none"
       >
         <span
-          className={`${geistMedium.className} text-[18px] leading-tight text-(--black)`}
+          className={`${geistMedium.className} text-[14px] leading-4.5 md:text-[18px] md:leading-tight text-(--black)`}
         >
           {faq.question}
         </span>
@@ -42,7 +36,7 @@ export default function Accordions({ faq, isOpen, onToggle }: Props) {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="px-6 pb-6 text-(--dim-gray) text-[16px] leading-6 pt-4">
+          <div className="px-6 pb-6 text-(--dim-gray) text-[14px] leading-[18px] md:leading-6 md:pt-4">
             {faq.answer}
           </div>
         </div>

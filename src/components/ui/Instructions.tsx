@@ -1,21 +1,19 @@
 "use client";
 import Image from "next/image";
-import TaskRequirements from "./TaskRequirements";
+import TaskRequirements from "@/components/ui/TaskRequirements";
 import { geistMedium, geistRegular } from "@/styles/fonts";
 import { useSelector } from "react-redux";
-import Modal from "react-responsive-modal";
-import { useState } from "react";
+import { useCountdownTimer } from "@/hooks/useTimer";
+import { RootState } from "@/store/store";
 
 export default function Instructions() {
+  const { minutes, seconds } = useCountdownTimer();
   const { words } = useSelector(
-    (state: any) => state.ieltsCalculate.ieltsScoreCalculate
+    (state: RootState) => state.ieltsCalculate.ieltsScoreCalculate
   );
   const isEssayCompleted = useSelector(
-    (state: any) => state.ieltsCalculate.isEssayCompleted
+    (state: RootState) => state.ieltsCalculate.isEssayCompleted
   );
-
-  console.log(isEssayCompleted, "essay completion");
-  console.log(words, "wordss");
   return (
     <>
       <div className="max-w-76.25 max-h-65.25 border-2 border-(--black) rounded-2xl px-4 py-4">
@@ -35,7 +33,7 @@ export default function Instructions() {
             <span
               className={`${geistMedium.className} text-(--royal-blue) leading-4.5 text-[14px]`}
             >
-              23:14
+              {minutes}:{seconds}
             </span>
           </div>
         </div>

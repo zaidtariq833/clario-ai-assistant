@@ -200,10 +200,3 @@ export const connectors = [
   "consequently",
   "in contrast",
 ];
-
-export const writingTypes = [
-  "Task Response",
-  "Coherence & Cohesion",
-  "Lexical Resource",
-  "Grammar Range & Accuracy",
-];

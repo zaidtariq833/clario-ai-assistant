@@ -1,12 +1,5 @@
 import { geistRegular } from "@/styles/fonts";
-
-type Props = {
-  spanText: string;
-  subHeading: string;
-  subHeadingClass: string;
-  desc?: string;
-  fontFamily: string;
-};
+import { SubHeadingProps } from "@/types";
 
 export default function SubHeading({
   spanText,
@@ -14,7 +7,7 @@ export default function SubHeading({
   subHeadingClass,
   desc,
   fontFamily,
-}: Props) {
+}: SubHeadingProps) {
   return (
     <>
       <span className={`${geistRegular.className} span-text`}>{spanText}</span>
@@ -23,7 +16,7 @@ export default function SubHeading({
 
       {desc && (
         <p
-          className={`${geistRegular.className} text-center mt-4 mb-12 text-2xl leading-7.75 text-(--carbon-gray)`}
+          className={`${geistRegular.className} leading-5.25 max-w-59.5 md:max-w-[761px] mx-auto text-center md:mt-4 mb-12 text-[1rem] md:text-2xl md:leading-7.75 text-(--carbon-gray)`}
         >
           {desc}
         </p>

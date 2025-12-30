@@ -3,23 +3,19 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <section className="mt-4 pt-[143.98px] md:mt-22.25">
+    <section className="mt-4 py-[143.98px] md:py-0 md:mt-22.25">
       <p className={`${geistRegular.className} latest-product-text`}>
         Announcing our latest product launch
       </p>
       <h1 className={`${geistRegular.className} main-heading`}>
         Your AI IELTS Writing Coach —&nbsp;
-        <span className="text-(--black) italic text-[48px] md:text-[86px] font-fangsong tracking-[-4px] md:tracking-[-8px]">
-          Instant Scores
-        </span>
+        <span className="instant-scores-heading">Instant Scores</span>
       </h1>
-      <p
-        className={`${interRegular.className} text-(--dark-gray) text-[14px] md:text-[1rem] text-center max-w-86 md:max-w-128.75 mx-auto leading-6.5 mb-10 tracking-normal`}
-      >
+      <p className={`${interRegular.className} instant-scores-para`}>
         Instant scoring, corrections, and personalized guidance — practice
         smarter and boost your band.
       </p>
-      <div className="flex items-center mb-12 text-[1rem] justify-center gap-3.25">
+      <div className="hidden md:flex md:items-center md:mb-12 md:text-[1rem] md:justify-center md:gap-3.25">
         <p
           className={`${geistRegular.className} leading-5.25 text-[1rem] text-(--black)`}
         >
@@ -33,6 +29,11 @@ export default function Banner() {
           className="animate-bounce"
         />
       </div>
+      <button className="get-started-btn-banner">
+        <p className="m-auto py-[13.5px] text-(--white)">
+          Get Started - <span className="font-fangsong italic">For Free</span>
+        </p>
+      </button>
     </section>
   );
 }

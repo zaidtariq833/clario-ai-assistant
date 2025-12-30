@@ -1,13 +1,14 @@
-import { testimonials } from "../constants";
+import { testimonials } from "@/components/constants";
 import Image from "next/image";
-import SubHeading from "../common/SubHeading";
+import SubHeading from "@/components/common/SubHeading";
 import { geistBold, geistRegular, geistSemiBold } from "@/styles/fonts";
+import { TestimonialCardType } from "@/types";
 
 export default function Testimonials() {
   const col1 = testimonials.slice(0, 5);
   const col2 = testimonials.slice(5, 9);
   const col3 = testimonials.slice(9, 15);
-  const renderCard = (card: (typeof testimonials)[0], index: number) => {
+  const renderCard = (card: TestimonialCardType, index: number) => {
     const bgCard =
       card?.card === 1 || card?.card === 10
         ? "bg-[url('/assets/images/scalloped-linear-1.png')]"
@@ -18,9 +19,9 @@ export default function Testimonials() {
     return (
       <div
         key={index}
-        className={`w-103.25 h-110.75 pt-12.25 px-7.75 mb-[11.38px] ${bgCard} bg-center bg-cover bg-no-repeat`}
+        className={`w-98 md:w-103.25 h-110.75 pt-12.25 px-7.75 ${bgCard} md:mb-[11.38px] bg-center bg-contain md:bg-cover bg-no-repeat`}
       >
-        <h4 className={`${geistBold.className} leading-7.75 text-[24px]`}>
+        <h4 className={`${geistBold.className} md:leading-7.75 text-[24px]`}>
           {card?.heading}
         </h4>
         <p
@@ -30,7 +31,7 @@ export default function Testimonials() {
         </p>
 
         {card?.personImage && (
-          <div className="flex items-center gap-3 mt-23.5">
+          <div className="flex items-center gap-3 mt-12 md:mt-23.5">
             <Image
               src={card.personImage}
               width={61}
@@ -58,9 +59,13 @@ export default function Testimonials() {
         fontFamily={geistSemiBold.className}
       />
       <div className="flex justify-center gap-2">
-        <div className="relative lg:bottom-66">{col1.map(renderCard)}</div>
-        <div>{col2.map(renderCard)}</div>
-        <div className="relative lg:bottom-60">{col3.map(renderCard)}</div>
+        <div className="mx-1 -mt-113.75 md:mt-0 md:mx-0 relative lg:bottom-66">
+          {col1.map(renderCard)}
+        </div>
+        <div className="hidden md:block">{col2.map(renderCard)}</div>
+        <div className="hidden md:block relative lg:bottom-60">
+          {col3.map(renderCard)}
+        </div>
       </div>
     </section>
   );

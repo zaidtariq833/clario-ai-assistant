@@ -1,14 +1,14 @@
 import Image from "next/image";
-import QuestionBox from "./QuestionBox";
-import Instructions from "./Instructions";
-import ParaBox from "./ParaBox";
-import SubmitEssay from "./SubmitEssay";
+import QuestionBox from "@/components/ui/QuestionBox";
+import Instructions from "@/components/ui/Instructions";
+import ParaBox from "@/components/ui/ParaBox";
+import SubmitEssay from "@/components/ui/SubmitEssay";
 import { geistRegular } from "@/styles/fonts";
 
 export default function LiveDemoSection() {
   return (
-    <section className="editor-section">
-      <div className="bg-(--light-periwinkle) flex items-center gap-[8.89px] justify-center py-2 rounded-t-[17px]">
+    <section className="hidden md:block editor-section">
+      <div className="live-demo-div">
         <Image
           src="/assets/icons/announcement-icon.svg"
           width={16}
@@ -16,7 +16,7 @@ export default function LiveDemoSection() {
           alt="announcement"
         />
         <p
-          className={`${geistRegular.className} font-geist-regular text-(--raisin-black) text-[13px] leading-[1.095] text-center max-w-295.75`}
+          className={`${geistRegular.className} text-(--raisin-black) text-[13px] leading-[1.095] text-center max-w-295.75`}
         >
           LIVE DEMO - TEST THE AI INSTANTLY
         </p>

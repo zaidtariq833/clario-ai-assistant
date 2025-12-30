@@ -1,6 +1,6 @@
 import { geistSemiBold } from "@/styles/fonts";
-import PracticeIelts from "./PracticeIelts";
-import SubHeading from "../common/SubHeading";
+import PracticeIelts from "@/components/ui/PracticeIelts";
+import SubHeading from "@/components/common/SubHeading";
 
 export default function IeltsFeatures() {
   return (

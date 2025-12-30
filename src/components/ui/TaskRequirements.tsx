@@ -1,16 +1,9 @@
 "use client";
 import Image from "next/image";
-import { taskReq } from "../constants";
+import { taskReq } from "@/components/constants";
 import { geistRegular } from "@/styles/fonts";
-import { useSelector } from "react-redux";
 
 export default function TaskRequirements() {
-  const { paragraphs } = useSelector(
-    (state: any) => state.ieltsCalculate.ieltsScoreCalculate
-  );
-  const isEssayCompleted = useSelector(
-    (state: any) => state.ieltsCalculate.ieltsScoreCalculate
-  );
   return (
     <>
       <div className="flex flex-col justify-between">
@@ -30,7 +23,7 @@ export default function TaskRequirements() {
           </div>
           <div className="px-6">
             <ul className="flex flex-col gap-3 mt-2">
-              {taskReq?.map((task, index) => {
+              {taskReq?.map((task: string, index: number) => {
                 return (
                   <li
                     key={index}

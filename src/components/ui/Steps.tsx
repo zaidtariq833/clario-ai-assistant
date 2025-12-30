@@ -1,6 +1,6 @@
-import { geistRegular, geistSemiBold, interRegular } from "@/styles/fonts";
-import StepsPoint from "./StepsPoint";
-import SubHeading from "../common/SubHeading";
+import { geistRegular } from "@/styles/fonts";
+import StepsPoint from "@/components/ui/StepsPoint";
+import SubHeading from "@/components/common/SubHeading";
 
 export default function Steps() {
   return (

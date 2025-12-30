@@ -1,26 +1,27 @@
 import Image from "next/image";
-import { steps } from "../constants";
+import { steps } from "@/components/constants";
 import { geistRegular, interLight } from "@/styles/fonts";
+import { StepsType } from "@/types";
 
 export default function StepsPoint() {
   return (
-    <div className="mx-18 mt-12 mb-18 grid grid-cols-1 lg:grid-cols-4 gap-2">
-      {steps.map((step, index) => (
+    <div className="mx-5 md:mx-18 mt-12 mb-18 grid grid-cols-1 lg:grid-cols-4 gap-2">
+      {steps.map((step: StepsType, index: number) => (
         <div key={index} className="relative">
           <div className="bg-(--ghost-white) rounded-3xl p-4 flex flex-col h-full min-h-85.25">
             <p
-              className={`${interLight.className} leading-6 uppercase text-(--gray-stone) text-[20px]`}
+              className={`${interLight.className} leading-4.25 md:leading-6 uppercase text-(--gray-stone) text-[14px] md:text-[20px]`}
             >
               {step?.name}
             </p>
 
             <h6
-              className={`${geistRegular.className} leading-6 text-[1.5rem] mt-3`}
+              className={`${geistRegular.className} leading-[31px] md:leading-6 text-[1.5rem] mt-3`}
             >
               {step?.mainText}
             </h6>
 
-            <div className="grow flex items-center justify-center py-6">
+            <div className="grow flex items-center justify-center md:py-6">
               <Image
                 src={step?.image}
                 width={261}
@@ -37,7 +38,7 @@ export default function StepsPoint() {
             </span>
           </div>
 
-          <div className="absolute -right-6 top-1/2 -translate-y-1/2 z-10 hidden lg:block">
+          <div className="md:absolute flex top-0 relative z-20 rotate-90 md:rotate-x-0 justify-center md:-right-6 md:top-1/2 -translate-y-1/2 md:z-10 md:block">
             {index < steps.length - 1 && (
               <Image
                 src="/assets/icons/forward-arrow.svg"
