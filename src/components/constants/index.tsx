@@ -52,10 +52,11 @@ export const ieltsScoreAndMistakes = [
 export const testimonials = [
   {
     card: 1,
-    heading: "",
-    description: "",
-    personImage: "",
-    learnerName: "",
+    heading: "Finally, Feedback That Makes Sense",
+    description:
+      '"This tool helped me understand exactly why my essays werenot scoring higher. The feedback is clearer than any IELTS tutor I have tried."',
+    personImage: "/assets/images/person-1.png",
+    learnerName: "Sarah M.",
   },
   {
     card: 2,
@@ -83,10 +84,11 @@ export const testimonials = [
   },
   {
     card: 5,
-    heading: "",
-    description: "",
-    personImage: "",
-    learnerName: "",
+    heading: "Finally, Feedback That Makes Sense",
+    description:
+      '"This tool helped me understand exactly why my essays werenot scoring higher. The feedback is clearer than any IELTS tutor I have tried."',
+    personImage: "/assets/images/person-4.png",
+    learnerName: "Sarah M.",
   },
   {
     card: 6,
@@ -122,10 +124,11 @@ export const testimonials = [
   },
   {
     card: 10,
-    heading: "",
-    description: "",
-    personImage: "",
-    learnerName: "",
+    heading: "Finally, Feedback That Makes Sense",
+    description:
+      '"This tool helped me understand exactly why my essays werenot scoring higher. The feedback is clearer than any IELTS tutor I have tried."',
+    personImage: "/assets/images/person-8.png",
+    learnerName: "Sarah M.",
   },
   {
     card: 11,
@@ -153,10 +156,11 @@ export const testimonials = [
   },
   {
     card: 14,
-    heading: "",
-    description: "",
-    personImage: "",
-    learnerName: "",
+    heading: "Finally, Feedback That Makes Sense",
+    description:
+      '"This tool helped me understand exactly why my essays werenot scoring higher. The feedback is clearer than any IELTS tutor I have tried."',
+    personImage: "/assets/images/person-9.png",
+    learnerName: "Sarah M.",
   },
 ];
 

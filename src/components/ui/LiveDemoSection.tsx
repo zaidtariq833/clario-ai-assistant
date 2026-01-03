@@ -16,27 +16,23 @@ export default function LiveDemoSection() {
           alt="announcement"
         />
         <p
-          className={`${geistRegular.className} text-(--raisin-black) text-[13px] leading-[1.095] text-center max-w-295.75`}
+          className={`${geistRegular.className} text-(--raisin-black) text-[0.8125rem] leading-[1.095] text-center max-w-295.75`}
         >
           LIVE DEMO - TEST THE AI INSTANTLY
         </p>
       </div>
-
-      <div className="bg-(--white) rounded-b-[17px] p-3.5">
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-4">
-          <div className="sm:col-span-9">
+      <div className="bg-(--white) rounded-b-[1.0625rem] p-3.5">
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-start">
+          <div className="sm:col-span-9 flex flex-col gap-4">
             <QuestionBox />
-          </div>
-          <div className="sm:col-span-3">
-            <Instructions />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-end sm:-mt-5">
-          <div className="sm:col-span-9">
             <ParaBox />
           </div>
-          <div className="sm:col-span-3">
-            <SubmitEssay />
+
+          <div className="sm:col-span-3 flex flex-col justify-between h-full min-h-full">
+            <Instructions />
+            <div className="mt-auto">
+              <SubmitEssay />
+            </div>
           </div>
         </div>
       </div>

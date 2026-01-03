@@ -9,7 +9,7 @@ import {
 
 export default function QuestionBox() {
   return (
-    <div className="border-2 rounded-2xl px-4 py-4">
+    <div className="border rounded-2xl px-4 py-4">
       <div className="flex items-center gap-1">
         <span className={`${geistRegular.className} text-base`}>Question</span>
         <Image
@@ -39,7 +39,7 @@ export default function QuestionBox() {
           return (
             <p
               key={index}
-              className={`${interMedium.className} shadow-lightest text-(--roman-silver) py-0.5 px-2.5 rounded-[15px]`}
+              className={`${interMedium.className} shadow-lightest text-(--roman-silver) py-0.5 px-2.5 rounded-[0.9375rem]`}
             >
               {ques}
             </p>

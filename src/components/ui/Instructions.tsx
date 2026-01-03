@@ -16,10 +16,10 @@ export default function Instructions() {
   );
   return (
     <>
-      <div className="max-w-76.25 max-h-65.25 border-2 border-(--black) rounded-2xl px-4 py-4">
+      <div className=" border border-(--black) rounded-2xl px-4 py-4">
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center gap-1">
-            <p className={`${geistRegular.className} text-[14px] leading-4.5`}>
+            <p className={`${geistRegular.className} text-sm leading-4.5`}>
               Time remaining
             </p>
             <Image
@@ -31,7 +31,7 @@ export default function Instructions() {
           </div>
           <div>
             <span
-              className={`${geistMedium.className} text-(--royal-blue) leading-4.5 text-[14px]`}
+              className={`${geistMedium.className} text-(--royal-blue) leading-4.5 text-sm`}
             >
               {minutes}:{seconds}
             </span>
@@ -60,7 +60,7 @@ export default function Instructions() {
           </div>
           <div>
             <p
-              className={`${geistRegular.className} text-(--black) text-[14px] leading-4.5`}
+              className={`${geistRegular.className} text-(--black) text-sm leading-4.5`}
             >
               {isEssayCompleted ? words : 0}/250
             </p>

@@ -7,7 +7,7 @@ export default function TaskRequirements() {
   return (
     <>
       <div className="flex flex-col justify-between">
-        <div className="py-4">
+        <div className="pt-4">
           <div className="flex items-center gap-1">
             <p
               className={`${geistRegular.className} leading-4 text-(--roman-silver) text-xs`}

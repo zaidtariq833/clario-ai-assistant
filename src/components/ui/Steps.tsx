@@ -4,7 +4,7 @@ import SubHeading from "@/components/common/SubHeading";
 
 export default function Steps() {
   return (
-    <section className="pt-18!">
+    <section className="mx-auto pt-18!">
       <SubHeading
         spanText="How It Works"
         subHeading="Your Path to a Higher Band"

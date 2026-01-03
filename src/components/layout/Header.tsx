@@ -18,7 +18,7 @@ export default function Header() {
           Sign in
         </button>
         <button
-          className={`${geistMedium.className} text-[14px] btn-startfree`}
+          className={`${geistMedium.className} text-sm btn-startfree`}
         >
           Start For Free
         </button>

@@ -26,7 +26,7 @@ export default function FinalScoreModal({
     <Modal
       open={open}
       classNames={{
-        modal: "w-[450px]",
+        modal: "w-[28.125rem]",
       }}
       onClose={onCloseModal}
       center
@@ -76,11 +76,11 @@ export default function FinalScoreModal({
           return (
             <div key={index} className={`${getBandBg(types.band)} types-score`}>
               <span
-                className={`${geistRegular.className} text-[14px] text-(--black)`}
+                className={`${geistRegular.className} text-sm text-(--black)`}
               >
                 {types.type}
               </span>
-              <span className={`ml-1 text-[14px] font-bold text-(--black)`}>
+              <span className={`ml-1 text-sm font-bold text-(--black)`}>
                 ({types.band.toFixed(1)})
               </span>
             </div>

@@ -12,7 +12,7 @@ export default function Accordions({ faq, isOpen, onToggle }: AccordionProps) {
         className="w-full flex items-center justify-between py-3 px-6 md:py-5 md:px-6 text-left focus:outline-none"
       >
         <span
-          className={`${geistMedium.className} text-[14px] leading-4.5 md:text-[18px] md:leading-tight text-(--black)`}
+          className={`${geistMedium.className} text-sm leading-4.5 md:text-lg md:leading-tight text-(--black)`}
         >
           {faq.question}
         </span>
@@ -36,7 +36,7 @@ export default function Accordions({ faq, isOpen, onToggle }: AccordionProps) {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="px-6 pb-6 text-(--dim-gray) text-[14px] leading-[18px] md:leading-6 md:pt-4">
+          <div className="px-6 pb-6 text-(--dim-gray) text-sm leading-4.5 md:leading-6 md:pt-4">
             {faq.answer}
           </div>
         </div>

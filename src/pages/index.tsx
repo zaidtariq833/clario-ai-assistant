@@ -13,8 +13,10 @@ export default function Home() {
     <>
       <div className="banner-image">
         <Header />
-        <Banner />
-        <LiveDemoSection />
+        <div className="max-w-[clamp(768px,79.63%,1536px)] mx-auto">
+          <Banner />
+          <LiveDemoSection />
+        </div>
         <Steps />
       </div>
 

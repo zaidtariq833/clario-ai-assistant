@@ -7,12 +7,12 @@ export default function EmptyEssay({ open, onCloseModal }: EmptyEssayProps) {
     <Modal
       open={open}
       classNames={{
-        modal: "w-[500px] h-[100px]",
+        modal: "w-[31.25rem] h-[6.25rem]",
       }}
       onClose={onCloseModal}
       center
     >
-      <h2 className={`${geistSemiBold.className} text-[20px] text-center mt-5`}>
+      <h2 className={`${geistSemiBold.className} text-xl text-center mt-5`}>
         Please Write Essay to calculate Bands!
       </h2>
     </Modal>

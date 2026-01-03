@@ -47,15 +47,16 @@
   /* colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* helpers */
-  --shadow-light: 0px 15px 14px 0px rgba(20, 33, 131, 0.03);
-  --shadow-lightest: 0 1px 1px 1px rgba(0, 0, 0, 0.03);
-  --shadow-card: 0 4px 8px 3px rgba(0, 0, 0, 0.08);
-  --shadow-dark: 0 23.1px 51.71px 0 rgba(0, 0, 0, 0.1),
-    0 93.52px 93.52px 0 rgba(0, 0, 0, 0.09),
-    0 211.24px 126.53px 0 rgba(0, 0, 0, 0.05),
-    0 376.28px 150.73px 0 rgba(0, 0, 0, 0.01),
-    0 587.52px 163.93px 0 rgba(0, 0, 0, 0);
+  /* shades */
+  --shadow-light: 0rem 0.9375rem 0.875rem 0rem rgba(20, 33, 131, 0.03);
+  --shadow-lightest: 0rem 0.0625rem 0.0625rem 0.0625rem rgba(0, 0, 0, 0.03);
+  --shadow-card: 0rem 0.25rem 0.5rem 0.1875rem rgba(0, 0, 0, 0.08);
+  --shadow-dark: 0rem 1.44375rem 3.231875rem 0rem rgba(0, 0, 0, 0.1),
+    0rem 5.845rem 5.845rem 0rem rgba(0, 0, 0, 0.09),
+    0rem 13.2025rem 7.908125rem 0rem rgba(0, 0, 0, 0.05),
+    0rem 23.5175rem 9.420625rem 0rem rgba(0, 0, 0, 0.01),
+    0rem 36.72rem 10.245625rem 0rem rgba(0, 0, 0, 0);
+
   --background-image-brand-sky: linear-gradient(
     to bottom,
     #2076fa 0%,
@@ -123,15 +124,19 @@ body {
 
 @layer components {
   .header {
-    @apply max-w-[396px] mx-4 flex items-center bg-(--white) justify-between max-h-16 px-2 py-2 rounded-[14px] shadow-light md:mx-auto md:max-w-7xl;
+    @apply max-w-[clamp(243px,85.07vw,1536px)] mx-auto flex items-center bg-(--white) justify-between px-2 py-2 rounded-[0.875rem] shadow-light;
+  }
+
+  .heading-description {
+    @apply leading-5.25 max-w-59.5 md:max-w-190.25 mx-auto text-center md:mt-4 mb-12 text-base md:text-2xl md:leading-7.75 text-(--carbon-gray);
   }
 
   .editor-section {
-    @apply max-w-295.75 mx-auto mt-12 mb-16.75 border-[6px] rounded-[17px] border-(--alice-blue) shadow-dark;
+    @apply mt-12 mb-16.75 border-[0.375rem] rounded-[1.0625rem] border-(--alice-blue) shadow-dark;
   }
 
   .btn-signin {
-    @apply hidden text-(--aviation-navy) bg-linear-to-b from-(--white-smoke) to-(--white) px-[18.27px] py-[9.13px] whitespace-nowrap rounded-[13.7px] cursor-pointer transition md:block;
+    @apply hidden text-(--aviation-navy) bg-linear-to-b from-(--white-smoke) to-(--white) px-[1.141875rem] py-[0.570625rem] whitespace-nowrap rounded-[0.85625rem] cursor-pointer transition md:block;
   }
 
   .btn-startfree {
@@ -139,35 +144,35 @@ body {
   }
 
   .btn-submitessay {
-    @apply w-full bg-[linear-gradient(to_bottom,#2076FA_0%,#5599FF_70%,#B5D2FD_100%)] leading-[26px] text-(--white) text-[20px] py-3.5 px-7.5 rounded-[9px] transition-all duration-300 hover:cursor-pointer;
+    @apply w-full bg-[linear-gradient(to_bottom,#2076FA_0%,#5599FF_70%,#B5D2FD_100%)] leading-6.5 text-(--white) text-xl py-3.5 px-7.5 rounded-[0.5625rem] transition-all duration-300 hover:cursor-pointer;
   }
 
   .ielts-band-text {
-    @apply md:text-[3.5rem] max-w-70.5 mx-auto text-[32px] md:max-w-190.25 text-center my-4! bg-linear-to-r from-(--black) to-(--medium-gray)/59 bg-clip-text text-transparent leading-10.5 md:leading-18.25;
+    @apply md:text-[3.5rem] max-w-70.5 mx-auto text-[2rem] md:max-w-190.25 text-center my-4! bg-linear-to-r from-(--black) to-(--medium-gray)/59 bg-clip-text text-transparent leading-10.5 md:leading-18.25;
   }
 
   .ielts-designed-text {
-    @apply text-[32px] md:text-[48px] md:leading-15.5 tracking-normal max-w-[344px] leading-10.5 md:max-w-142.5 mx-auto text-center mt-4 mb-[56px] md:my-4 bg-linear-to-r from-[#000000] to-[#666666]/59 bg-clip-text text-transparent;
+    @apply text-[2rem] md:text-[3rem] md:leading-15.5 tracking-normal max-w-86 leading-10.5 md:max-w-142.5 mx-auto text-center mt-4 mb-14 md:my-4 bg-linear-to-r from-[#000000] to-[#666666]/59 bg-clip-text text-transparent;
   }
 
   .latest-product-text {
-    @apply text-center leading-4 bg-(--white) rounded-[50px] w-fit mx-auto px-3.5 py-[1.76px] text-[12px] mb-[12px] md:mb-1.5 md:text-base md:px-7 md:py-0.75;
+    @apply text-center leading-4 bg-(--white) rounded-[3.125rem] w-fit mx-auto px-3.5 py-[0.11rem] text-xs mb-3 md:mb-1.5 md:text-base md:px-7 md:py-2.25;
   }
 
   .main-heading {
-    @apply mt-1.5 mb-[5.51px] md:mb-2.75 max-w-[326px] text-[48px] md:text-[86px] leading-[52.1px] md:leading-24 mx-auto tracking-[-0.05em] text-center md:max-w-198.25;
+    @apply mt-1.5 mb-[0.344375rem] md:mb-2.75 max-w-99 px-4.25 w-full text-[3rem] md:text-[5.375rem] leading-[3.25625rem] md:leading-24 mx-auto tracking-[-0.05em] text-center md:max-w-198.25;
   }
 
   .span-text {
-    @apply relative z-10 md:static block mx-auto w-fit bg-(--white) text-[1rem] px-4 rounded-[50px] py-2 leading-4;
+    @apply relative z-10 md:static block mx-auto w-fit bg-(--white) text-[1rem] px-4 rounded-[3.125rem] py-2 leading-4;
   }
 
   .proven-track-text {
-    @apply text-[32px] mt-4 mb-14 md:text-[48px] max-w-75 md:max-w-190.25 mx-auto text-center md:my-4 bg-linear-to-r from-[#000000] to-[#666666]/59 bg-clip-text text-transparent relative z-10;
+    @apply text-[2rem] mt-4 mb-14 md:text-5xl max-w-75 md:max-w-190.25 mx-auto text-center md:my-4 bg-linear-to-r from-[#000000] to-[#666666]/59 bg-clip-text text-transparent relative z-10;
   }
 
   .faq-text {
-    @apply relative z-10 md:static text-[56px] text-center bg-[linear-gradient(90deg,#000000_0%,rgba(102,102,102,0.59)_100%)] bg-clip-text text-transparent;
+    @apply relative z-10 md:static text-[3.5rem] text-center bg-[linear-gradient(90deg,#000000_0%,rgba(102,102,102,0.59)_100%)] bg-clip-text text-transparent;
   }
 
   .lower-section {
@@ -179,9 +184,9 @@ body {
       absolute
       top-0
       inset-x-0
-      h-[100px]
-      z-[1]
-      bg-gradient-to-b
+      h-25
+      z-1
+      bg-linear-to-b
       from-(--ice-flow)
       via-(--ice-flow)/90
       via-(--ice-flow)/60
@@ -192,7 +197,7 @@ body {
     @apply absolute
       top-0
       inset-x-0
-      h-[500px]
+      h-[31.25rem]
       z-[2]
       bg-[radial-gradient(ellipse_at_top,#FBFCFF_0%,transparent_75%)]
       opacity-80;
@@ -206,25 +211,25 @@ body {
     bg-no-repeat
     bg-contain
     md:bg-cover
-    md:bg-[center_-50px]
+    md:bg-[center_-3.125rem]
     pt-4
     md:pt-12.25;
   }
 
   .instant-scores-heading {
-    @apply text-(--black) italic text-[48px] md:text-[86px] font-fangsong tracking-[-4px] md:tracking-[-8px];
+    @apply text-(--black) italic text-5xl md:text-[5.375rem] font-fangsong tracking-[-0.25rem] md:tracking-[-0.5rem];
   }
 
   .instant-scores-para {
-    @apply text-(--dark-gray) text-[14px] md:text-[1rem] text-center max-w-86 md:max-w-128.75 mx-auto leading-6.5 mb-10 tracking-normal;
+    @apply text-(--dark-gray) text-sm md:text-[1rem] text-center max-w-86 md:max-w-128.75 mx-auto leading-6.5 mb-10 tracking-normal;
   }
 
   .get-started-btn-banner {
-    @apply bg-[linear-gradient(90deg,#2076FA_0%,#5599FF_70%,#B5D2FD_100%)] flex w-[75%] mx-auto rounded-[9px] md:hidden;
+    @apply bg-[linear-gradient(90deg,#2076FA_0%,#5599FF_70%,#B5D2FD_100%)] flex w-[75%] mx-auto rounded-[0.5625rem] md:hidden;
   }
 
   .live-demo-div {
-    @apply bg-(--light-periwinkle) flex items-center gap-[8.89px] justify-center py-2 rounded-t-[17px];
+    @apply bg-(--light-periwinkle) flex items-center gap-[0.555625rem] justify-center py-2 rounded-t-[1.0625rem];
   }
 
   .types-score {
@@ -239,5 +244,13 @@ body {
 @layer utilities {
   .transition {
     transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .wavy-box {
+    mask: radial-gradient(calc(sqrt(2) * 10px), #000 calc(100% - 1px), #0000),
+      conic-gradient(#000 0 0) content-box,
+      radial-gradient(calc(sqrt(2) * 10px), #0000 100%, #000 calc(100% + 1px))
+        10px 10px padding-box;
+    mask-size: 40px 40px;
   }
 }

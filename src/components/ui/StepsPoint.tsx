@@ -5,18 +5,18 @@ import { StepsType } from "@/types";
 
 export default function StepsPoint() {
   return (
-    <div className="mx-5 md:mx-18 mt-12 mb-18 grid grid-cols-1 lg:grid-cols-4 gap-2">
+    <div className="max-w-[90.5%] mx-auto mt-12 mb-18 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-col-4 gap-2">
       {steps.map((step: StepsType, index: number) => (
         <div key={index} className="relative">
           <div className="bg-(--ghost-white) rounded-3xl p-4 flex flex-col h-full min-h-85.25">
             <p
-              className={`${interLight.className} leading-4.25 md:leading-6 uppercase text-(--gray-stone) text-[14px] md:text-[20px]`}
+              className={`${interLight.className} leading-4.25 md:leading-6 uppercase text-(--gray-stone) text-sm md:text-xl`}
             >
               {step?.name}
             </p>
 
             <h6
-              className={`${geistRegular.className} leading-[31px] md:leading-6 text-[1.5rem] mt-3`}
+              className={`${geistRegular.className} leading-7.75 md:leading-6 text-[1.5rem] mt-3`}
             >
               {step?.mainText}
             </h6>
@@ -32,13 +32,13 @@ export default function StepsPoint() {
             </div>
 
             <span
-              className={`${geistRegular.className} leading-4.5 bg-(--white) text-[14px] block w-fit px-4 py-2 rounded-[4.5rem] mt-auto`}
+              className={`${geistRegular.className} leading-4.5 bg-(--white) text-sm block w-fit px-4 py-2 rounded-[4.5rem] mt-auto`}
             >
               {step?.btnText}
             </span>
           </div>
 
-          <div className="md:absolute flex top-0 relative z-20 rotate-90 md:rotate-x-0 justify-center md:-right-6 md:top-1/2 -translate-y-1/2 md:z-10 md:block">
+          <div className="md:hidden lg:absolute flex top-0 relative z-20 lg:rotate-x-0 justify-center lg:-right-6 md:top-1/2 -translate-y-1/2 lg:z-10 lg:block">
             {index < steps.length - 1 && (
               <Image
                 src="/assets/icons/forward-arrow.svg"

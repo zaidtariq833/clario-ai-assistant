@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <section className="mt-4 py-[143.98px] md:py-0 md:mt-22.25">
+    <section className="mt-4 py-[8.99875rem] md:py-0 md:mt-22.25">
       <p className={`${geistRegular.className} latest-product-text`}>
         Announcing our latest product launch
       </p>
@@ -15,9 +15,9 @@ export default function Banner() {
         Instant scoring, corrections, and personalized guidance — practice
         smarter and boost your band.
       </p>
-      <div className="hidden md:flex md:items-center md:mb-12 md:text-[1rem] md:justify-center md:gap-3.25">
+      <div className="hidden md:flex md:items-center md:mb-12 md:text-base md:justify-center md:gap-3.25">
         <p
-          className={`${geistRegular.className} leading-5.25 text-[1rem] text-(--black)`}
+          className={`${geistRegular.className} leading-5.25 text-base text-(--black)`}
         >
           Try it live below — see how it works
         </p>
@@ -30,7 +30,7 @@ export default function Banner() {
         />
       </div>
       <button className="get-started-btn-banner">
-        <p className="m-auto py-[13.5px] text-(--white)">
+        <p className="m-auto py-[0.84375rem] text-(--white)">
           Get Started - <span className="font-fangsong italic">For Free</span>
         </p>
       </button>
